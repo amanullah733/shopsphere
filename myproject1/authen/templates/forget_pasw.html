@@ -1,0 +1,22 @@
+{% extends 'main.html' %}
+
+
+{% block content %}
+<center>
+    <h2>Forget Password page</h2> <br>
+
+    {% if error %}
+        <h2>user not found..!!</h2>
+    {% endif %}
+
+    <form action="" method="POST">
+        {% csrf_token %}
+
+        <label for="">Enter Username:</label>
+        <input type="text" name="username" id=""> <br><br>
+
+        <button type="submit">Submit</button>
+
+    </form>
+</center>
+{% endblock %}

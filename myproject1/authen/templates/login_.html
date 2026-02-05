@@ -1,0 +1,25 @@
+{% extends 'main.html' %}
+
+
+{% block content %}
+<center>
+    <h2>Login page</h2>
+    {% if status %}
+        <h1 style="color: red;"> {{status}}</h1>  
+    {% endif %}  
+    
+    <form action="" method="POST">
+        {% csrf_token %}
+
+        <label for="">Username:</label>
+        <input type="text" name="username" id="">  <br><br>
+
+        <label for="">Password:</label>
+        <input type="password" name="password" id="">  <br><br>
+
+        <button type="submit">Submit</button>
+    </form>
+    <a href="{% url 'forget_pass' %}">Forget Password</a> 
+    <a href="{% url 'register' %}">Sign Up</a>
+</center>
+{% endblock %}

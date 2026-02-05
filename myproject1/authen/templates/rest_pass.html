@@ -1,0 +1,35 @@
+{% extends 'main.html' %}
+
+{% block content %}
+    <h2>Change your password</h2>
+
+    {% if wrong %}
+        <h2>old password is not correct...!!!</h2>
+    {% endif %}
+
+    {% if same %}
+        <h2>New password should not be similar to old password...!!</h2>
+    {% endif %}
+    
+    <center>
+        <form action="" method="POST">
+            {% csrf_token %}
+            
+                <label for="">UserName:</label>
+                <input type="text" value="{{request.user}}" readonly> <br><br>
+
+            {% if new_pass %}
+
+                <label for="">Enter your New Password:</label>
+                <input type="password" name="newpasw" id=""> <br><br>
+                
+            {% else %}
+
+                <label for="">Enter you Old password:</label>
+                <input type="password" name="oldpasw" id=""><br><br>
+
+            {% endif %}
+            <button type="submit">Submit</button>
+        </form>
+    </center>
+{% endblock %}
