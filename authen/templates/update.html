@@ -1,0 +1,27 @@
+{% extends 'main.html' %}
+
+{% block content %}
+<center>
+
+    <h2>Update Page:</h2>
+    <form action="" method="POST">
+        {% csrf_token %}
+        <label for="">First Name:</label>
+        <input type="text" name="fname" id=""><br>
+
+        <label for="">Last Name:</label>
+        <input type="text" name="lname" id=""><br>
+
+        <label for="">Email:</label>
+        <input type="email" name="email" id=""><br>
+
+        <label for="">Username:</label>
+        <input type="text" name="uname" id=""><br>
+
+        <button type="submit">Submit</button>
+
+
+    </form>
+
+</center>
+{% endblock %}

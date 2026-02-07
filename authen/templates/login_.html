@@ -1,0 +1,25 @@
+{% extends 'main.html' %}
+
+{% block content %}
+<center>
+    {{error}}
+</center>
+<center>
+    <h2>LOGINPAGES:</h2>
+    <form action="" method="POST">
+        {% csrf_token %}
+       
+        <label for="">Username:</label>
+        <input type="text" name="uname" id=""><br>
+        
+        <label for="">Password:</label>
+        <input type="password" name="pasw" id=""><br>
+
+        <button type="submit">Submit</button>
+
+
+    </form>
+    <a href="{% url 'register' %}">Sing up here.</a>
+    <a href="{% url 'forget_pasw' %}">Forget</a>
+</center>
+{% endblock %}

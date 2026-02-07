@@ -1,0 +1,25 @@
+{% extends 'main.html' %}
+
+{% block content %}
+<center>
+    <h2>Reset your password here</h2>
+    {{error_pasw}}
+    {% if error %}
+        <h2>The entred Old_password is wrong...!!</h2>
+    {% endif %}
+    <form action="" method="POST">
+        {% csrf_token %}
+
+        {% if new_pass %}
+            <label for="">New Password:</label>
+            <input type="password" name="new_pasw" id=""> <br>
+
+        {% else %}
+            <label for="">Old_password:</label>
+            <input type="password" name="old_pasw" id=""> <br>
+        {% endif %}
+
+        <button type="submit">Submit</button>
+    </form>
+</center>
+{% endblock %}

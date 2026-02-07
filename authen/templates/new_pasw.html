@@ -1,0 +1,16 @@
+{% extends 'main.html' %}
+
+{% block content %}
+<center>
+    <h3>newpasw_page:</h3>
+    
+    <form action="" method="POST">
+        {% csrf_token %}
+
+        <label for="">new password:</label>
+        <input type="password" name = 'new_pass' id=""> <br><br>
+
+        <button type="submit">Submit</button>
+    </form>
+</center>
+{% endblock %}
